@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets2/img/favicon.ico' %}">
+    <title>SecureHealth</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets2/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets2css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets2/css/style.css' %}">
+   
+</head>
+
+<body>
+    <div class="main-wrapper account-wrapper">
+        <div class="account-page">
+			<div class="account-center">
+				<div class="account-box">
+                    <form  action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="account-logo">
+                            <img src="{% static 'assets2/img/logo-dark.png' %}" alt=""></a>
+                        </div>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" autofocus="" name="username" class="form-control">
+                        </div> 
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                        <div class="form-group text-center col-md-6 button-div">
+                            <button type="submit" class="btn btn-primary account-btn">Login</button>
+                        </div>
+                    
+                        
+                        
+                    </form>
+
+                    
+                </div>
+			</div>
+        </div>
+    </div>
+    <script src="{% static 'assets2/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'assets2/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets2/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets2/js/app.js' %}"></script>
+</body>
+
+</html>
