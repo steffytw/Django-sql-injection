@@ -10,7 +10,12 @@ def login(request):
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = userLogin.objects.raw('SELECT * FROM sqlInjectionApp_userLogin WHERE username = username and password = password')
+        print(username,password)
+        user = userLogin.objects.raw('SELECT * FROM sqlInjectionApp_userLogin WHERE username =  "{}" and password =  "{}"'.format(username,password))
+        print(user)
         if user:
             return HttpResponse("successfully logged in")
+        else:
+            return render(request,'sqlInjectionApp/login.html',{'form':form})
     return render(request,'sqlInjectionApp/login.html',{'form':form})
+
